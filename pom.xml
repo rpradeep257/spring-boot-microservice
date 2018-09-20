@@ -24,6 +24,7 @@
 		<module>spring-boot-microservice-eureka-client</module>
 		<module>spring-boot-microservice-currency-conversion</module>
 		<module>spring-boot-microservice-forex-service</module>
+		<module>spring-boot-microservice-rabbitmq</module>
 	</modules>
 
 	<properties>

@@ -7,13 +7,12 @@ RUN echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswit
 # Set DNS cache to 10 seconds (Cache is permanent by default). Network hosts are volatile in Docker clusters.
 RUN grep '^networkaddress.cache.ttl=' /${JAVA_HOME}/jre/lib/security/java.security || echo 'networkaddress.cache.ttl=10' >> /${JAVA_HOME}/jre/lib/security/java.security
 
-ENV SERVER_PORT=8761
-ENV EUREKA_SERVER=localhost
+ENV SERVER_PORT=8070
 
 # The application's jar file
-ARG JAR_FILE=target/spring-boot-microservice-eureka-server-0.0.1-SNAPSHOT.jar
+ARG JAR_FILE=target/spring-boot-microservice-rabbitmq-0.0.1-SNAPSHOT.jar
 
-# Add the application's jar to the container
+# Add the application's jar to the container	
 ADD ${JAR_FILE} app.jar
 
 #RUN bash -c 'touch /app.jar'

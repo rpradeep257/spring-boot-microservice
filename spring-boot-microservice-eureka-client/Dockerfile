@@ -1,5 +1,5 @@
 # Start with a base image containing Java runtime
-FROM openjdk:8
+FROM openjdk:8-jdk-alpine
 
 # Fix DNS resolution issues when nss is not installed
 RUN echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf
