@@ -4,9 +4,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>spring-boot-microservice-forex-service</artifactId>
+	<artifactId>spring-boot-microservice-user-service</artifactId>
 	<packaging>jar</packaging>
-	<name>spring-boot-microservice-forex-service</name>
+	<name>spring-boot-microservice-user-service</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -58,24 +58,6 @@
 			<version>2.0.2</version>
 		</dependency>
 		
-		<dependency>
-            <groupId>info.cukes</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>${cucumber.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>info.cukes</groupId>
-            <artifactId>cucumber-junit</artifactId>
-            <version>${cucumber.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>info.cukes</groupId>
-            <artifactId>cucumber-spring</artifactId>
-            <version>${cucumber.version}</version>
-            <scope>test</scope>
-        </dependency>
 		
 	</dependencies>
 
@@ -96,5 +78,6 @@
 			</plugin>
 		</plugins>
 	</build>
+
 
 </project>
