@@ -1,0 +1,16 @@
+rootProject.name = 'spring-boot-microservice'
+include ':spring-boot-microservice-admin-server'
+include ':spring-boot-microservice-eureka-server'
+include ':spring-boot-microservice-eureka-client'
+include ':spring-boot-microservice-currency-conversion'
+include ':spring-boot-microservice-forex-service'
+include ':spring-boot-microservice-rabbitmq'
+include ':spring-boot-microservice-user-service'
+
+project(':spring-boot-microservice-admin-server').projectDir = "$rootDir/spring-boot-microservice-admin-server" as File
+project(':spring-boot-microservice-eureka-server').projectDir = "$rootDir/spring-boot-microservice-eureka-server" as File
+project(':spring-boot-microservice-eureka-client').projectDir = "$rootDir/spring-boot-microservice-eureka-client" as File
+project(':spring-boot-microservice-currency-conversion').projectDir = "$rootDir/spring-boot-microservice-currency-conversion" as File
+project(':spring-boot-microservice-forex-service').projectDir = "$rootDir/spring-boot-microservice-forex-service" as File
+project(':spring-boot-microservice-rabbitmq').projectDir = "$rootDir/spring-boot-microservice-rabbitmq" as File
+project(':spring-boot-microservice-user-service').projectDir = "$rootDir/spring-boot-microservice-user-service" as File

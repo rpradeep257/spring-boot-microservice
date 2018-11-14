@@ -28,6 +28,26 @@ public class UserController {
         return userService.get(id);
     }
     
+    @GetMapping
+    @RequestMapping(method = RequestMethod.GET, path = "/hello1")
+    public String info1() {
+        System.out.println("111111111111111111");
+        try {
+        Thread.sleep(30 * 60 * 1000);
+        } catch (InterruptedException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+        }
+        return "HELLO1";
+    }
+    
+    @GetMapping
+    @RequestMapping(method = RequestMethod.GET, path = "/hello2")
+    public String info2() {
+        System.out.println("111111111111111111");
+        return "HELLO2";
+    }
+    
    /* @GetMapping
     @RequestMapping(method = RequestMethod.GET, path = "/{username}")
     public User getUsers(@PathVariable String username){            

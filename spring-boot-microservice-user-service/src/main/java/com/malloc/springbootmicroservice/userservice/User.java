@@ -1,5 +1,6 @@
 package com.malloc.springbootmicroservice.userservice;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -14,6 +15,9 @@ public class User {
     private String username;
 
     private String password;
+    
+    @Embedded
+    private Address address; 
 
     public User() {
     }

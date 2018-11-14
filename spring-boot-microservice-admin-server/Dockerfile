@@ -10,7 +10,7 @@ RUN grep '^networkaddress.cache.ttl=' /${JAVA_HOME}/jre/lib/security/java.securi
 ENV SERVER_PORT=9090
 
 # The application's jar file
-ARG JAR_FILE=target/spring-boot-microservice-admin-server-0.0.1-SNAPSHOT.jar
+ARG JAR_FILE=build/libs/app-1.0.0.jar
 
 # Add the application's jar to the container
 ADD ${JAR_FILE} app.jar

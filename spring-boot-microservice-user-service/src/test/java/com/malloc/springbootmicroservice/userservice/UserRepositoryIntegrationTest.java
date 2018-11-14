@@ -20,7 +20,7 @@ public class UserRepositoryIntegrationTest {
 
     @Test
     public void test_findByUsername() {
-        User user = userRepository.findByUsername("AAA");
+        User user = userRepository.findByUsername("user");
         assertNotNull(user);
     }
 
