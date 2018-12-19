@@ -18,18 +18,23 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 	}
 	
-	@Bean
-    public Sender mySender() {
-        return new Sender();
-    }
-
     @Bean
-    public Queue fooQueue() {
-        return new Queue("foo");
+    public Queue queueComplaints() {
+        return new Queue("queue-complaints");
+    }
+    
+    @Bean
+    public Queue queueOrders() {
+        return new Queue("queue-orders");
     }
 
-    @RabbitListener(queues = "foo" )
-    public void process(@Payload String message) {
+    @RabbitListener(queues = {"queue-complaints"})
+    public void process1(@Payload String message) {
+        System.out.println("Received: " + message);
+    }
+    
+    @RabbitListener(queues = {"queue-orders"})
+    public void process2(@Payload String message) {
         System.out.println("Received: " + message);
     }
 }

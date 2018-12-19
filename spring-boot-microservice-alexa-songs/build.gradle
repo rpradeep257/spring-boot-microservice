@@ -1,0 +1,9 @@
+
+description = 'spring-boot-microservice-alexa-songs'
+dependencies {
+    compile group: 'com.mashape.unirest', name: 'unirest-java', version:'1.4.9'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version:'2.9.6'    
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-client', version:'2.0.1.RELEASE'
+    compile group: 'de.codecentric', name: 'spring-boot-admin-starter-client', version:'2.0.2'
+    compile group: 'org.jsoup', name: 'jsoup', version:'1.11.3'
+}

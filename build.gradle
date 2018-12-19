@@ -2,13 +2,24 @@
 
 allprojects  {
   apply plugin: 'maven'
-  group = 'com.test.springboot'
+  group = 'com.malloc.springboot'
   version = '1.0.0'    
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.6.RELEASE")
+    }
 }
 
 subprojects {
 
 	apply plugin: 'java'
+	apply plugin: 'org.springframework.boot'
+	apply plugin: 'io.spring.dependency-management'
 	sourceCompatibility = 1.8
 	targetCompatibility = 1.8
 	
@@ -21,7 +32,7 @@ subprojects {
     	maven { url "http://central.maven.org/maven2" }
   	}
   
-	dependencies {
+	dependencies {		
 		compile group: 'org.springframework.boot', name: 'spring-boot-starter', version:'2.0.6.RELEASE'
 		compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version:'2.0.6.RELEASE'
 		compile group: 'org.springframework.boot', name: 'spring-boot-starter-webflux', version:'2.0.6.RELEASE'

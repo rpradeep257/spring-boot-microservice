@@ -1,0 +1,41 @@
+solr create -c padam
+solr create -c padam
+
+<fieldType name="text_ngrm" class="solr.TextField" positionIncrementGap="100">
+	<analyzer type="index">
+		<tokenizer class="solr.WhitespaceTokenizerFactory"/>
+    	<filter class="solr.NGramFilterFactory" minGramSize="1" maxGramSize="50"/>
+   		<filter class="solr.LowerCaseFilterFactory"/>
+   	</analyzer>
+   	<analyzer type="query">
+     <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+     <filter class="solr.LowerCaseFilterFactory"/>
+   </analyzer>
+</fieldType>
+
+curl http://localhost:8983/solr/padam/schema -X POST -H 'Content-type:application/json' --data-binary '{
+    "add-field" : {
+        "name":"film",
+        "type":"text_ngrm",
+        "multiValued":true,
+        "stored":true,
+        "indexed":true
+    },
+    "add-field" : {
+        "name":"name",
+        "type":"text_ngrm",
+        "multiValued":true,
+        "stored":true,
+        "indexed":true
+    }    
+}'
+
+curl http://localhost:8983/solr/padam/schema -X POST -H 'Content-type:application/json' --data-binary '{
+    "delete-field" : {
+        "name":"song.name"      
+    }    
+}'
+
+curl 'http://localhost:8983/solr/padam/schema/fields'
+curl 'http://localhost:8983/solr/padam/update?commit=true' --data '<delete><query>*:*</query></delete>' -H 'Content-type:text/xml; charset=utf-8'
+curl 'http://localhost:8983/solr/padam/update?commit=true' --data-binary @/opt/solr/server/solr/padam/padam.json -H 'Content-type:application/json'
