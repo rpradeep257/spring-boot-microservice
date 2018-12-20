@@ -3,11 +3,13 @@ package com.malloc.springbootmicroservice.alexa;
 import org.springframework.stereotype.Component;
 
 import com.amazon.speech.json.SpeechletRequestEnvelope;
+import com.amazon.speech.slu.Intent;
 import com.amazon.speech.speechlet.IntentRequest;
 import com.amazon.speech.speechlet.LaunchRequest;
 import com.amazon.speech.speechlet.Session;
 import com.amazon.speech.speechlet.SessionEndedRequest;
 import com.amazon.speech.speechlet.SessionStartedRequest;
+import com.amazon.speech.speechlet.SpeechletException;
 import com.amazon.speech.speechlet.SpeechletResponse;
 import com.amazon.speech.speechlet.SpeechletV2;
 import com.amazon.speech.ui.Card;
@@ -38,9 +40,17 @@ public class HandlerSpeechlet implements SpeechletV2 {
     }
 
     @Override
-    public SpeechletResponse onIntent(SpeechletRequestEnvelope<IntentRequest> requestEnvelope) {
-        // TODO Auto-generated method stub
-        return null;
+    public SpeechletResponse onIntent(SpeechletRequestEnvelope<IntentRequest> requestEnvelope) 
+    {
+        System.out.println(requestEnvelope.getRequest().getRequestId() + " : " + requestEnvelope.getSession().getSessionId());
+
+        Intent intent = requestEnvelope.getRequest().getIntent();
+        String intentName = intent.getName();
+
+        if ("HelloWorldIntent".equals(intentName)) {
+            System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaa");
+        }
+        return null; 
     }
 
     @Override
