@@ -13,7 +13,6 @@ public class AlexaConfig {
 
 	@Autowired
 	private HandlerSpeechlet handlerSpeechlet;
-	private Speechlet speechlet;
 	
 	@Bean
 	public ServletRegistrationBean registerSpeechletServlet() {
