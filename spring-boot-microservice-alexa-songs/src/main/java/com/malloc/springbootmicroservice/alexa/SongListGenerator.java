@@ -22,7 +22,7 @@ public class SongListGenerator {
     
     Logger logger = LoggerFactory.getLogger(SongListGenerator.class);
     
-    @Scheduled(fixedDelay = 24*60*60)
+    //@Scheduled(fixedDelay = 24*60*60)
     public void send() throws IOException {
         String url = "http://www.friendstamilmp3.com/songs2/A-Z%20Movie%20Songs/";
         

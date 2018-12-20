@@ -6,4 +6,11 @@ dependencies {
     compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-client', version:'2.0.1.RELEASE'
     compile group: 'de.codecentric', name: 'spring-boot-admin-starter-client', version:'2.0.2'
     compile group: 'org.jsoup', name: 'jsoup', version:'1.11.3'
+    compile group: 'com.amazon.alexa', name: 'alexa-skills-kit', version:'1.8.1'
+    compile group: 'com.amazon.alexa', name: 'ask-sdk', version:'2.11.0'
 }
+
+configurations.all {
+   exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+}
+
