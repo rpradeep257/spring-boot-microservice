@@ -1,6 +1,5 @@
 package com.malloc.springbootmicroservice.alexa;
 
-import org.springframework.stereotype.Component;
 
 import com.amazon.ask.Skill;
 import com.amazon.ask.SkillStreamHandler;
@@ -12,7 +11,7 @@ import com.malloc.springbootmicroservice.alexa.handlers.HelpIntentHandler;
 import com.malloc.springbootmicroservice.alexa.handlers.LaunchRequestHandler;
 import com.malloc.springbootmicroservice.alexa.handlers.SessionEndedRequestHandler;
 
-@Component
+
 public class HelloWorldStreamHandler extends SkillStreamHandler {
 
     private static Skill getSkill() {
