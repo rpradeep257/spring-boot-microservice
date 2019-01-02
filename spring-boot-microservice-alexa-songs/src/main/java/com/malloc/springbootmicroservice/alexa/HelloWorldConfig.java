@@ -57,7 +57,7 @@ public class HelloWorldConfig {
     @Bean
     public ServletRegistrationBean<SkillServlet> registerServlet(Skill skillInstance) {
         SkillServlet skillServlet = new SkillServlet(skillInstance);
-        return new ServletRegistrationBean<>(skillServlet, "/alexa");
+        return new ServletRegistrationBean<>(skillServlet, "/myskill1");
     }
 
     @Bean
