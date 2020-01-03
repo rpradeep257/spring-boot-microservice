@@ -1,5 +1,5 @@
 rootProject.name = 'spring-boot-microservice'
-/*
+
 include ':spring-boot-microservice-admin-server'
 include ':spring-boot-microservice-eureka-server'
 include ':spring-boot-microservice-eureka-client'
@@ -8,10 +8,12 @@ include ':spring-boot-microservice-forex-service'
 include ':spring-boot-microservice-rabbitmq-consumer'
 include ':spring-boot-microservice-rabbitmq-producer'
 include ':spring-boot-microservice-user-service'
-*/
 include ':spring-boot-microservice-alexa-songs'
+include ':spring-boot-microservice-aws-sqs'
+include ':spring-boot-microservice-aws-sns'
+include ':spring-boot-microservice-aws-lamda1'
+include ':spring-boot-microservice-batch'
 
-/*
 project(':spring-boot-microservice-admin-server').projectDir = "$rootDir/spring-boot-microservice-admin-server" as File
 project(':spring-boot-microservice-eureka-server').projectDir = "$rootDir/spring-boot-microservice-eureka-server" as File
 project(':spring-boot-microservice-eureka-client').projectDir = "$rootDir/spring-boot-microservice-eureka-client" as File
@@ -20,5 +22,8 @@ project(':spring-boot-microservice-forex-service').projectDir = "$rootDir/spring
 project(':spring-boot-microservice-rabbitmq-consumer').projectDir = "$rootDir/spring-boot-microservice-rabbitmq-consumer" as File
 project(':spring-boot-microservice-rabbitmq-producer').projectDir = "$rootDir/spring-boot-microservice-rabbitmq-producer" as File
 project(':spring-boot-microservice-user-service').projectDir = "$rootDir/spring-boot-microservice-user-service" as File
-*/
 project(':spring-boot-microservice-alexa-songs').projectDir = "$rootDir/spring-boot-microservice-alexa-songs" as File
+project(':spring-boot-microservice-aws-sqs').projectDir = "$rootDir/spring-boot-microservice-aws-sqs" as File
+project(':spring-boot-microservice-aws-sns').projectDir = "$rootDir/spring-boot-microservice-aws-sns" as File
+project(':spring-boot-microservice-aws-lamda1').projectDir = "$rootDir/spring-boot-microservice-aws-lamda1" as File
+project(':spring-boot-microservice-batch').projectDir = "$rootDir/spring-boot-microservice-batch" as File
