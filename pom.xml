@@ -23,15 +23,16 @@
 		<module>spring-boot-microservice-admin-server</module>
 		<module>spring-boot-microservice-eureka-server</module>
 		<module>spring-boot-microservice-eureka-client</module>
-		<module>spring-boot-microservice-user-service</module>
 		<module>spring-boot-microservice-rabbitmq-producer</module>
 		<module>spring-boot-microservice-rabbitmq-consumer</module>
 		<module>spring-boot-microservice-currency-conversion</module>
 		<module>spring-boot-microservice-forex-service</module>
+		<module>spring-boot-microservice-hibernate</module>
 		
 		
-		<!-- 
-		<module>spring-boot-microservice-alexa-songs</module>
+		
+		
+	<!-- 	<module>spring-boot-microservice-alexa-songs</module>
 		<module>spring-boot-microservice-aws-sqs</module>
 		<module>spring-boot-microservice-aws-sns</module>
 		<module>spring-boot-microservice-aws-lamda1</module>
