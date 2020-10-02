@@ -22,11 +22,11 @@ import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
 
 
-@Configuration
+//@Configuration
 public class HelloWorldConfig {
     
     int httpsPort = 443;
-    int httpPort = 80;
+    int httpPort = 7778;
     
     @Bean
     public ServletWebServerFactory servletContainer() {

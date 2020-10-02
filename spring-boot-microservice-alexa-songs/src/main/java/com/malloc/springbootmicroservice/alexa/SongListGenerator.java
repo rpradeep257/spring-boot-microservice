@@ -10,20 +10,23 @@ import org.jsoup.Jsoup;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
-@Service
+@Component
 public class SongListGenerator {
     
-    Logger logger = LoggerFactory.getLogger(SongListGenerator.class);
+    private static Logger LOGGER = LoggerFactory.getLogger(SongListGenerator.class);
     
-    //@Scheduled(fixedDelay = 24*60*60)
+    @Scheduled(fixedDelay = 24*60*60)
     public void send() throws IOException {
+
+        LOGGER.info("Started...");
+
         String url = "http://www.friendstamilmp3.com/songs2/A-Z%20Movie%20Songs/";
         
         List<Song> songs = new ArrayList<Song>(); 
@@ -31,10 +34,11 @@ public class SongListGenerator {
                 Jsoup.connect(url)
                 .get()
                 .select("a[href]")                
-                .parallelStream()                
-                .collect(Collectors.toMap(f -> f.attr("abs:href"), f -> f.text())).entrySet()                
+                .parallelStream()
+                .collect(Collectors.toMap(f -> f.attr("abs:href"), f -> f.text())).entrySet()
                 .parallelStream()
                 .filter(f -> f.getValue().startsWith("B"))
+                        .peek(f -> System.out.println(f.getKey() + "->" + f.getValue()))
                 .map(f -> {                    
                     
                     try {
